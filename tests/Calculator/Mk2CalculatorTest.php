@@ -26,6 +26,13 @@ class Mk2CalculatorTest extends TestCase
         $this->assertEquals(1, $change->coin2);
     }
 
+    public function testGetChangeHard()
+    {
+        $change = $this->calculator->getChange(16);
+        $this->assertEquals(3, $change->coin2);
+        $this->assertEquals(1, $change->bill10);
+    }
+
     public function testGetChangeImpossible()
     {
         $change = $this->calculator->getChange(1);
